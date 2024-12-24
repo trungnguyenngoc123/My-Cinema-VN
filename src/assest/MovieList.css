@@ -1,0 +1,219 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+}
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.img-container {
+  position: relative;
+}
+
+.hover-thumb {
+  transition: transform 0.5s;
+  /* height: 350px; */
+}
+@media screen and (min-width: 768px) {
+  .movie--width img {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie--width img {
+    height: 200px;
+  }
+  .cate--movie--text{
+    font-size: 16px;
+  }
+  .mobile--header{
+    padding-top: 80px;
+  }
+}
+.img-container:hover .hover-thumb {
+  transform: scale(1.1);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+  background-color: orange;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container:hover .play-button {
+  display: flex;
+  opacity: 1;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 165, 0, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: pulse 1.5s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 2;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+.movie-name {
+  background: black;
+  opacity: 0.7;
+}
+
+
+.movie--name {
+  bottom: 0;
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.des-movie p{
+  width: 30%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.movie--name h6 {
+  white-space: nowrap;
+  /* Không cho phép xuống dòng */
+  overflow: hidden;
+  /* Ẩn nội dung tràn   */
+  text-overflow: ellipsis;
+  /* Thêm dấu ba chấm nếu nội dung bị cắt */
+}
+.swiper--img img{
+  /* height: 600px; */
+  /* aspect-ratio: 16/9; */
+  height: 80vh;
+}
+@media screen and (min-width: 768px) {
+  .mobile--view{
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .swiper--img img {
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+  .mobile--view{
+    display: none;
+  }
+}
+.category--movie{
+  background-color: #343232;
+  opacity: 0.7;
+}
+.category--movie:hover{
+  color: orange;
+}
+.text-wrap p{
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+  /* width: 15%; */
+  /* max-width: 300px; */
+  overflow-wrap: break-word; /* Hỗ trợ bẻ từ trên các trình duyệt khác */
+}
+/* MovieList.css */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #ddd;
+  transition: 0.7s ease;
+}
+div.swiper-button-next,
+div.swiper-button-prev {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #ff0000;
+  font-size: 20px;
+}
+.list--movie{
+  background-color: #333232;
+  color: white;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d2d2d; /* Màu nền của nút */
+  padding: 10px;
+  border-radius: 50px; /* Viền tròn */
+  cursor: pointer;
+  width: 40px; /* Chiều rộng mặc định (chỉ chứa icon) */
+  height: 40px;
+  transition: width 0.3s ease;
+  border: 1px solid #fff; /* Màu viền */
+}
+
+.icon-container .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  color: #f9d342; /* Màu vàng cho chữ "Xem thêm" */
+  margin-left: -350%;
+  /* margin-right: 16%; */
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, visibility 0.3s ease, margin-left 0.3s ease;
+}
+
+.icon-container:hover {
+  width: auto; /* Mở rộng chiều rộng khi hover */
+}
+
+.icon-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  margin-left: 10px; /* Khoảng cách giữa văn bản và icon */
+}
+@media screen and (max-width: 768px) {
+  .icon-container {
+    width: 30px;
+    height: 30px;
+    
+  }
+  .icon-container .tooltip-text {
+    font-size: 12px;
+    margin-left: -650%;
+  }
+  
+}

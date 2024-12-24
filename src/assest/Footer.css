@@ -1,0 +1,60 @@
+@media screen and (max-width: 768px) {
+    .mobile-view {
+        display: block;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+    .footer-input input {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view {
+        display: block;
+    }
+    .footer-input input {
+        width: 75%;
+    }
+}
+
+.nav-item1 a {
+    color: white;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    width: fit-content;
+}
+
+.nav-item1 a:hover {
+    color: gold;
+    background-color: inherit;
+}
+
+.hover-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item1 a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: gold;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.nav-item1 a:hover::after,
+.nav-item1 a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}

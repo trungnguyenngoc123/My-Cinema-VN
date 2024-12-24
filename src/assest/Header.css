@@ -1,0 +1,110 @@
+.intro-text {
+    position: relative;
+    text-align: center;
+    bottom: 130px;
+    color: white;
+}
+
+.current a {
+    border-bottom: 2px solid gold;
+}
+
+.header {
+    background-color: gold;
+}
+
+.btn1 {
+    padding: 20px;
+}
+
+.btn1:hover {
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: contain;
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+.dropdown-hover {
+    width: 500px;
+}
+
+.dropdown-hover li a {
+    width: fit-content;
+}
+.dropdown-hover li a:focus {
+    background-color: inherit;
+}
+.dropdown-hover li a:hover {
+    background-color: orange;
+    color: white;
+    border-radius: 30px;
+}
+
+.nav-item a {
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-item a:hover {
+    background: orange;
+    transition: 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-item img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .carousel-inner {
+        height: auto;
+    }
+
+    .form-booking .col-md-4:nth-child(1) {
+        padding-left: 8px;
+    }
+
+    .form-booking .col-md-4:nth-child(3) {
+        padding-right: 8px;
+    }
+
+    .intro-text {
+        bottom: 110px;
+    }
+
+    .intro-text h3 {
+        font-size: 23px;
+    }
+
+    .intro-text h5 {
+        font-size: 15px;
+    }
+
+    .dropdown-hover {
+        width: 100%;
+    }
+
+    /* .dropdown-hover li a:hover {
+        width: 100%;
+    } */
+    .dropdown-hover .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Divide into 2 columns */
+        gap: 10px;
+        /* Add some space between items */
+    }
+
+    .dropdown-hover .col-4 {
+        flex: 1 1 100%;
+        /* Ensure columns take full width */
+    }
+}
